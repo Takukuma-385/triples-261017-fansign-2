@@ -1,0 +1,16 @@
+{
+  "discord_webhook_url": "https://discord.com/api/webhooks/1553723773298155621/YnSb-vNBk8Xrvi0FUDJ9tzccYADJ9vDO_210YGxE2N6fyqiSaR8hp6nbYkgavet8SeU5",
+  "products": [
+    {
+      "url": "https://www.kmonstar.com.tw/products/%E6%87%89%E5%8B%9F-261017-triples-lovepop-pt1-%E5%B0%88%E8%BC%AF%E7%99%BC%E8%A1%8C%E7%B4%80%E5%BF%B5%E7%B0%BD%E5%90%8D%E6%9C%83-in-taipei.json",
+      "custom_name": ""
+    }
+  ],
+  "id_name_map": {},
+  "schedules": [
+    {
+      "start": "2026-09-23 14:00",
+      "end": "2026-12-31 23:59"
+    }
+  ]
+}
