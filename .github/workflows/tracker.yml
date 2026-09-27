@@ -1,0 +1,36 @@
+name: KMonstar 庫存追蹤器
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - run: pip install requests pytz
+
+      - name: 還原 state 快取
+        uses: actions/cache@v4
+        with:
+          path: state.json
+          key: kmonstar-state-${{ github.run_id }}
+          restore-keys: kmonstar-state-
+
+      - run: python tracker_ci.py
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+
+      - name: 儲存 state 快取
+        uses: actions/cache/save@v4
+        if: always()
+        with:
+          path: state.json
+          key: kmonstar-state-${{ github.run_id }}
